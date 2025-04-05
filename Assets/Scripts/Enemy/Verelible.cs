@@ -64,13 +64,10 @@ public class WavyEnemy : MonoBehaviour
 
             Destroy(gameObject);
         }
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("PlayerBullet"))
+
+        if (collision.gameObject.CompareTag("PlayerBullet"))
         {
-            Destroy(other.gameObject); // destroy bullet
-            Destroy(gameObject);       // destroy this enemy
+            Destroy(gameObject);
         }
     }
 }

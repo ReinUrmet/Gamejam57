@@ -26,6 +26,7 @@ public class PlayerShoot : MonoBehaviour
         Vector3 spawnPos = firePoint.position + Vector3.down * 0.1f;
 
         GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+        bullet.tag = "PlayerBullet"; 
 
         // Align bullet to face downward
         bullet.transform.up = Vector3.down;
