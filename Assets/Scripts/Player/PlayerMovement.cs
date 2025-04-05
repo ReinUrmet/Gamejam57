@@ -9,11 +9,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isBouncing = false;
     private float bounceTimer = 0f;
     private PlayerHealth healthScript;
+    private Animator anim;
 
     void Start()
     {
-        // Get the PlayerHealth script from the same GameObject
-        GameObject gm = GameObject.Find("GameManager"); // Make sure name matches!
+        anim = GetComponent<Animator>();
+
+        GameObject gm = GameObject.Find("GameManager");
         if (gm != null)
         {
             healthScript = gm.GetComponent<PlayerHealth>();
@@ -24,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isBouncing)
         {
-            Move(); // ← Only move if not bouncing
+            Move();
         }
 
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
                 isBouncing = false;
             }
         }
+
+        UpdateAnimations();
     }
 
     void Move()
@@ -53,13 +57,47 @@ public class PlayerMovement : MonoBehaviour
     void Jetpack()
     {
         Vector3 velocity = rig.linearVelocity;
-        velocity.y = jetpackForce; // Set exact upward velocity
+        velocity.y = jetpackForce;
         rig.linearVelocity = velocity;
     }
 
+    void UpdateAnimations()
+    {
+        float x = rig.linearVelocity.x;
+        float y = rig.linearVelocity.y;
+
+        bool movingLeft = x < 0;
+        bool movingRight = x > 0;
+        bool jetpacking = y > 0.2f;
+        bool falling = y < -0.2f;
+
+        // Priority: left/right > jetpacking/falling
+        if (movingLeft)
+        {
+            anim.SetBool("IsMovingLeft", true);
+            anim.SetBool("IsMovingRight", false);
+            anim.SetBool("IsJetpacking", false);
+            anim.SetBool("IsFalling", false);
+        }
+        else if (movingRight)
+        {
+            anim.SetBool("IsMovingLeft", false);
+            anim.SetBool("IsMovingRight", true);
+            anim.SetBool("IsJetpacking", false);
+            anim.SetBool("IsFalling", false);
+        }
+        else
+        {
+            anim.SetBool("IsMovingLeft", false);
+            anim.SetBool("IsMovingRight", false);
+            anim.SetBool("IsJetpacking", jetpacking);
+            anim.SetBool("IsFalling", falling);
+        }
+    }
+
+
     void LateUpdate()
     {
-        // Snap Z to a constant to stay in 2.5D
         Vector3 pos = transform.position;
         pos.z = 77.7f;
         transform.position = pos;
@@ -74,8 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 healthScript.TakeDamage(1);
             }
 
-            // Optional: trigger bounce so player can't take damage instantly again
-            TriggerBounceCooldown(0.5f); // Example cooldown time
+            TriggerBounceCooldown(0.5f);
         }
     }
 
@@ -85,4 +122,3 @@ public class PlayerMovement : MonoBehaviour
         bounceTimer = duration;
     }
 }
-
