@@ -15,13 +15,14 @@ GameObject:
   - component: {fileID: 4994576962001363978}
   - component: {fileID: 3303470566167621856}
   - component: {fileID: 5912318793154638352}
-  - component: {fileID: 1429096265521843970}
   - component: {fileID: 1413545048739007177}
-  - component: {fileID: 3651757678636290890}
-  - component: {fileID: 3807575641832747534}
+  - component: {fileID: 768347670685877770}
+  - component: {fileID: 346216522450675940}
+  - component: {fileID: 226570794526883287}
+  - component: {fileID: 3054325302973892421}
   m_Layer: 0
   m_Name: Playerkooskaameraga
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +58,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   jetpackForce: 5
-  rig: {fileID: 3807575641832747534}
+  rig: {fileID: 226570794526883287}
   animationObject: {fileID: 5048828508332077135}
 --- !u!114 &8719990650672648622
 MonoBehaviour:
@@ -174,19 +175,6 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 0
   m_Center: {x: 2.5, y: 4, z: 1.12}
---- !u!114 &1429096265521843970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7707685792592262666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f96b9a68c9304e4186ccf3119bdb662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounceStrength: 30
 --- !u!136 &1413545048739007177
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -210,7 +198,30 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 0
   m_Center: {x: -2.5, y: 4, z: 1.12}
---- !u!95 &3651757678636290890
+--- !u!136 &768347670685877770
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707685792592262666}
+  m_Material: {fileID: 13400000, guid: 86da5e0e30b3a4bb2a11f79b1808c6cc, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8789902
+  m_Height: 4
+  m_Direction: 0
+  m_Center: {x: -2.5, y: 4, z: 1.12}
+--- !u!95 &346216522450675940
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -232,7 +243,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!54 &3807575641832747534
+--- !u!54 &226570794526883287
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,6 +270,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &3054325302973892421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707685792592262666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f96b9a68c9304e4186ccf3119bdb662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceStrength: 30
 --- !u!1 &9212206150151340308
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class BounceCollision : MonoBehaviour
         // Bounce only off "Wall" or "Object" tags
         if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Object"))
         {
+            Debug.Log("Hit the wall");
             foreach (ContactPoint contact in collision.contacts)
             {
                 Vector3 normal = contact.normal;
