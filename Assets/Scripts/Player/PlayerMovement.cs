@@ -6,14 +6,18 @@ public class PlayerMovement : MonoBehaviour
     public float jetpackForce = 2f;
     public Rigidbody rig;
 
+    public GameObject animationObject; // 👈 Drag your PlayerAnimation child here
+    private Animator anim;
+
     private bool isBouncing = false;
     private float bounceTimer = 0f;
     private PlayerHealth healthScript;
-    private Animator anim;
+
+    private bool wasFalling = false;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = animationObject.GetComponent<Animator>(); // 👈 Animator is on the child
 
         GameObject gm = GameObject.Find("GameManager");
         if (gm != null)
@@ -71,13 +75,14 @@ public class PlayerMovement : MonoBehaviour
         bool jetpacking = y > 0.2f;
         bool falling = y < -0.2f;
 
-        // Priority: left/right > jetpacking/falling
+        // 🔽 Priority: Left/Right first
         if (movingLeft)
         {
             anim.SetBool("IsMovingLeft", true);
             anim.SetBool("IsMovingRight", false);
             anim.SetBool("IsJetpacking", false);
             anim.SetBool("IsFalling", false);
+            anim.SetBool("StartedFall", false);
         }
         else if (movingRight)
         {
@@ -85,16 +90,28 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("IsMovingRight", true);
             anim.SetBool("IsJetpacking", false);
             anim.SetBool("IsFalling", false);
+            anim.SetBool("StartedFall", false);
         }
         else
         {
             anim.SetBool("IsMovingLeft", false);
             anim.SetBool("IsMovingRight", false);
+
             anim.SetBool("IsJetpacking", jetpacking);
             anim.SetBool("IsFalling", falling);
-        }
-    }
 
+            if (falling && !wasFalling)
+            {
+                anim.SetBool("StartedFall", true);
+            }
+            else if (!falling)
+            {
+                anim.SetBool("StartedFall", false);
+            }
+        }
+
+        wasFalling = falling;
+    }
 
     void LateUpdate()
     {
