@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float jetpackForce = 10f;
+    public float jetpackForce = 2f;
     public Rigidbody rig;
 
     void Update()
