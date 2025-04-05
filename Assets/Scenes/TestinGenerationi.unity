@@ -802,6 +802,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7776815345509930786, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
   m_PrefabInstance: {fileID: 1899541851}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893515824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893515809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780cc90f00717e64db1e9a7b7d115f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  shootCooldown: 0.05
 --- !u!1001 &1899541851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -870,10 +885,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8719990650672648622, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 484879947}
+    - target: {fileID: 8719990650672648622, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2488874857991467390, guid: 8baaba307580bf54e928696a3e9c16c7, type: 3}
+    - target: {fileID: 8719990650672648622, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
+      propertyPath: shootCooldown
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7707685792592262666, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1893515824}
   m_SourcePrefab: {fileID: 100100000, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
 --- !u!20 &1931601181 stripped
 Camera:
