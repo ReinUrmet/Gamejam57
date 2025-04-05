@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5939610762326966032}
   - component: {fileID: 2348502729912074767}
+  - component: {fileID: 7985547976513280950}
+  - component: {fileID: 808327361140364768}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,3 +48,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   cam: {fileID: 0}
+  RestartScene: RestartTseen
+--- !u!114 &7985547976513280950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232889142601825523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34623c4d1d58431e842783ca20dff86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  fullHearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  health: 3
+  RestartScene: RestartTseen
+--- !u!114 &808327361140364768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232889142601825523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f276987c375046f18a43cc79526ca60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depthText: {fileID: 0}
