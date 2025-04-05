@@ -245,37 +245,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3505288844158545586, guid: fbd0f4ba2492db742b3776fb1ef3179d, type: 3}
   m_PrefabInstance: {fileID: 7038402759516200465}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &484879946
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 484879947}
-  m_Layer: 0
-  m_Name: FirePointPlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &484879947
+--- !u!4 &484879947 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 279920823210339112, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
+  m_PrefabInstance: {fileID: 1899541851}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484879946}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.54, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1893515815}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &627447274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -841,17 +815,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 484879947}
     - target: {fileID: 3121671054067182862, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3121671054067182862, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 2488874857991467390, guid: 8baaba307580bf54e928696a3e9c16c7, type: 3}
-    - target: {fileID: 3121671054067182862, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
-      propertyPath: jetpackForce
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3121671054067182862, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
       propertyPath: shootCooldown
       value: 1
@@ -860,25 +826,9 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5064480443085946317, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
-      propertyPath: m_Constraints
-      value: 120
-      objectReference: {fileID: 0}
     - target: {fileID: 7707685792592262666, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
       propertyPath: m_Name
       value: Playerkooskaameraga
-      objectReference: {fileID: 0}
-    - target: {fileID: 7776815345509930786, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7776815345509930786, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7776815345509930786, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7776815345509930786, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -922,10 +872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7776815345509930786, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 484879947}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e542e1c3b0fd49f884538a6bef8cc3d, type: 3}
 --- !u!20 &1931601181 stripped
