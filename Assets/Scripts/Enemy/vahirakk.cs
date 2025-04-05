@@ -8,7 +8,7 @@ public class WanderingShooter3D_XY : MonoBehaviour
 
     public GameObject bulletPrefab;
     public float shootInterval = 3f;
-    public Transform firePoint;       // A child transform for bullet spawn
+    public Transform firePoint;
     public Transform player;
 
     private Vector3 currentDirection;
@@ -36,14 +36,12 @@ public class WanderingShooter3D_XY : MonoBehaviour
         moveTimer += Time.deltaTime;
         shootTimer += Time.deltaTime;
 
-        // Change direction
         if (moveTimer >= directionChangeInterval)
         {
             ChooseNewDirection();
             moveTimer = 0f;
         }
 
-        // Shoot at player
         if (shootTimer >= shootInterval && player != null)
         {
             ShootAtPlayer();
@@ -53,21 +51,19 @@ public class WanderingShooter3D_XY : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Check for wall collision ahead
         if (Physics.Raycast(transform.position, currentDirection, raycastDistance))
         {
             ChooseNewDirection();
             return;
         }
 
-        // Move in direction (X and Y only)
         Vector3 nextPosition = rb.position + currentDirection * moveSpeed * Time.fixedDeltaTime;
-        nextPosition.z = transform.position.z; // Lock Z to current value
+        nextPosition.z = transform.position.z;
         rb.MovePosition(nextPosition);
     }
+
     void ChooseNewDirection()
     {
-        // Only allow movement left/right/down — never up (Y must be <= 0)
         float angle;
         Vector3 dir;
 
@@ -76,11 +72,10 @@ public class WanderingShooter3D_XY : MonoBehaviour
             angle = Random.Range(0f, 360f);
             dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f).normalized;
         }
-        while (dir.y > 0); // Repeat until Y is 0 or negative (no upward movement)
+        while (dir.y > 0);
 
         currentDirection = dir;
     }
-
 
     void ShootAtPlayer()
     {
@@ -90,9 +85,31 @@ public class WanderingShooter3D_XY : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
 
-        // Tell the bullet which way to go
-        bullet.GetComponent<VahiBullet>().SetDirection(directionToPlayer);
+        // Set bullet direction
+        VahiBullet bulletScript = bullet.GetComponent<VahiBullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.SetDirection(directionToPlayer);
+        }
+
+        // Prevent bullet from hitting the enemy that fired it
+        Collider enemyCollider = GetComponent<Collider>();
+        Collider bulletCollider = bullet.GetComponent<Collider>();
+        if (enemyCollider != null && bulletCollider != null)
+        {
+            Physics.IgnoreCollision(enemyCollider, bulletCollider);
+        }
     }
 
 
+
+    // 💥 Kill enemy if hit by player's bullet
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            Destroy(collision.gameObject); // Destroy the bullet
+            Destroy(gameObject);          // Destroy the enemy
+        }
+    }
 }

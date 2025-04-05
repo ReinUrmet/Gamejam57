@@ -4,7 +4,6 @@ public class VahiBullet : MonoBehaviour
 {
     public float speed = 10f;
     public float lifetime = 5f;
-
     private Vector3 direction;
 
     public void SetDirection(Vector3 dir)
@@ -17,10 +16,9 @@ public class VahiBullet : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        // Constant movement in direction
-        transform.position += direction * speed * Time.fixedDeltaTime;
+        transform.position += direction * speed * Time.deltaTime;
     }
 
     void OnCollisionEnter(Collision collision)
