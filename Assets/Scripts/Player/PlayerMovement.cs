@@ -8,6 +8,17 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isBouncing = false;
     private float bounceTimer = 0f;
+    private PlayerHealth healthScript;
+
+    void Start()
+    {
+        // Get the PlayerHealth script from the same GameObject
+        GameObject gm = GameObject.Find("GameManager"); // Make sure name matches!
+        if (gm != null)
+        {
+            healthScript = gm.GetComponent<PlayerHealth>();
+        }
+    }
 
     void Update()
     {
@@ -52,6 +63,20 @@ public class PlayerMovement : MonoBehaviour
         Vector3 pos = transform.position;
         pos.z = 77.7f;
         transform.position = pos;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (healthScript != null)
+            {
+                healthScript.TakeDamage(1);
+            }
+
+            // Optional: trigger bounce so player can't take damage instantly again
+            TriggerBounceCooldown(0.5f); // Example cooldown time
+        }
     }
 
     public void TriggerBounceCooldown(float duration)
