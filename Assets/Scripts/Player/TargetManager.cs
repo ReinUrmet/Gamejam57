@@ -33,22 +33,20 @@ public class TargetManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (frameDelay > 0)
         {
             frameDelay--;
             return;
         }
 
-        var targetTender = Player.GetComponent<Renderer>();
-
         if (Player != null && !IsVisible(cam, Player))
         {
             Destroy(Player);
+            Player = null; // Mark it as null to avoid using it again
             Invoke("Restart", 0.2f);
-
         }
     }
+
 
     void Restart()
     {
