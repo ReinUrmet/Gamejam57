@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4770635576599759158}
   m_Layer: 0
   m_Name: "V\xE4hiBullet"
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,4 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db027eb8d5df9f54091a78306a4ffc94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 5
+  speed: 10
+  lifetime: 5
