@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 velocity = rig.linearVelocity;
         velocity.x = x * moveSpeed;
-        velocity.z = 0f; // Lock to 2D plane
+        velocity.z = 0f; // Keep the player in 2D plane
         rig.linearVelocity = velocity;
     }
 
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     void LateUpdate()
     {
-        // Lock Z axis
+        // Snap Z to 0 so the player stays in a 2D plane
         Vector3 pos = transform.position;
         pos.z = 77.7f;
         transform.position = pos;
