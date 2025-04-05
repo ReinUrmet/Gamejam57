@@ -11,6 +11,7 @@ public class WavyEnemy : MonoBehaviour
     private Vector3 perpendicular;
 
     private float waveTimer = 0f;
+    private PlayerHealth healthScript;
 
     void Start()
     {
@@ -50,6 +51,20 @@ public class WavyEnemy : MonoBehaviour
     }
 
     // 💥 Destroy enemy on bullet hit
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Hit Player");
+            if (healthScript != null)
+            {
+                healthScript.TakeDamage(1);
+            }
+
+            Destroy(gameObject);
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlayerBullet"))
