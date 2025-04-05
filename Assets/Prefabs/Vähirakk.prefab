@@ -140,9 +140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   directionChangeInterval: 3
-  raycastDistance: 1
+  raycastDistance: 3
   bulletPrefab: {fileID: 2925206263662446924, guid: 9d0b5e22bfc1d0441a7126335696f32c, type: 3}
-  shootInterval: 3
+  shootInterval: 1
   firePoint: {fileID: 4279216637006717957}
   player: {fileID: 0}
 --- !u!54 &2563081037324281583
@@ -170,7 +170,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &8195515705148426270
 BoxCollider:
