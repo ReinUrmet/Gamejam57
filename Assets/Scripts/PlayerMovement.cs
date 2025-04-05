@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Snap Z to 0 so the player stays in a 2D plane
         Vector3 pos = transform.position;
-        pos.z = 0f;
+        pos.z = 77.7f;
         transform.position = pos;
     }
 }
