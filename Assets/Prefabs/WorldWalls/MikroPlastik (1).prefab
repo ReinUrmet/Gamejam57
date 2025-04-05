@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3477147691898271017
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -241.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 73.48
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.11340969
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7091466
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.040468723
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.6947027
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 167.463
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 89.469
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 5.8899994
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      propertyPath: m_Name
+      value: MikroPlastik (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2404930585297770504}
+  m_SourcePrefab: {fileID: 100100000, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+--- !u!1 &4359527005828892792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ea920abb05ad824ba54cbf176e0cfdb, type: 3}
+  m_PrefabInstance: {fileID: 3477147691898271017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &2404930585297770504
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359527005828892792}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Height: 0.31736276
+  m_Direction: 1
+  m_Center: {x: -0.051691886, y: 0.07, z: 0.031578023}
