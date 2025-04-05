@@ -2,16 +2,41 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int MoveSpeed;
+    public float moveSpeed = 5f;
+    public float jetpackForce = 10f;
+    public Rigidbody rig;
 
-    // Update is called once per frame
     void Update()
     {
-        Move()
+        Move();
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Jetpack();
+        }
     }
 
     void Move()
     {
-        transform
+        float x = Input.GetAxis("Horizontal");
+
+        Vector3 velocity = rig.linearVelocity;
+        velocity.x = x * moveSpeed;
+        velocity.z = 0f; // Keep the player in 2D plane
+        rig.linearVelocity = velocity;
+    }
+
+    void Jetpack()
+    {
+        rig.AddForce(Vector3.up * jetpackForce, ForceMode.Force);
+    }
+
+    void LateUpdate()
+    {
+        // Snap Z to 0 so the player stays in a 2D plane
+        Vector3 pos = transform.position;
+        pos.z = 0f;
+        transform.position = pos;
     }
 }
+
