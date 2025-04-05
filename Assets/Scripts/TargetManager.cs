@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TargetManager : MonoBehaviour
 {
@@ -7,11 +8,14 @@ public class TargetManager : MonoBehaviour
     public GameObject Player;
     public Camera cam;
     private int frameDelay = 2;
+    public string RestartScene = "RestartTseen";
 
 
 
     private bool IsVisible(Camera c, GameObject Player)
     {
+        if (Player == null) return false;
+
         var planes = GeometryUtility.CalculateFrustumPlanes(c);
         var point = Player.transform.position;
 
@@ -30,7 +34,7 @@ public class TargetManager : MonoBehaviour
     void Update()
     {
 
-        if(frameDelay > 0)
+        if (frameDelay > 0)
         {
             frameDelay--;
             return;
@@ -41,6 +45,13 @@ public class TargetManager : MonoBehaviour
         if (Player != null && !IsVisible(cam, Player))
         {
             Destroy(Player);
-        }   
+            Invoke("Restart", 0.2f);
+
+        }
+    }
+
+    void Restart()
+    {
+        SceneManager.LoadScene(RestartScene);
     }
 }
