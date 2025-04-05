@@ -10,7 +10,7 @@ public class TargetManager : MonoBehaviour
 
 
 
-    private bool IsNotVisible(Camera c, GameObject Player)
+    private bool IsVisible(Camera c, GameObject Player)
     {
         var planes = GeometryUtility.CalculateFrustumPlanes(c);
         var point = Player.transform.position;
@@ -38,7 +38,7 @@ public class TargetManager : MonoBehaviour
 
         var targetTender = Player.GetComponent<Renderer>();
 
-        if (Player != null && IsNotVisible(cam, Player))
+        if (Player != null && !IsVisible(cam, Player))
         {
             Destroy(Player);
         }   
