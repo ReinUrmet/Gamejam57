@@ -141,7 +141,7 @@ MonoBehaviour:
   moveSpeed: 6
   directionChangeInterval: 3
   raycastDistance: 3
-  bulletPrefab: {fileID: 2925206263662446924, guid: 9d0b5e22bfc1d0441a7126335696f32c, type: 3}
+  bulletPrefab: {fileID: 5830198178695120970, guid: 6206988ed8ead57438e404519b5ecad3, type: 3}
   shootInterval: 1
   firePoint: {fileID: 4279216637006717957}
   player: {fileID: 0}

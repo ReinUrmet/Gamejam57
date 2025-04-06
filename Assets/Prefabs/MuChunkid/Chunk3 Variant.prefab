@@ -149,6 +149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VereliblePikkAnim (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5808479689808103930, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6615802336556421952, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
       propertyPath: m_LocalScale.x
       value: 7.439221
@@ -226,6 +230,10 @@ PrefabInstance:
     - target: {fileID: 5808479689808103930, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
       propertyPath: m_Name
       value: VereliblePikkAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808479689808103930, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6615802336556421952, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
       propertyPath: m_LocalScale.x
@@ -443,6 +451,10 @@ PrefabInstance:
     - target: {fileID: 5808479689808103930, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
       propertyPath: m_Name
       value: VereliblePikkAnim (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808479689808103930, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6615802336556421952, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
       propertyPath: m_LocalScale.x
@@ -673,6 +685,10 @@ PrefabInstance:
     - target: {fileID: 5808479689808103930, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
       propertyPath: m_Name
       value: VereliblePikkAnim (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808479689808103930, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6615802336556421952, guid: 0f05a1eb8a1bf5a4b9a30946f2be8eca, type: 3}
       propertyPath: m_LocalScale.x

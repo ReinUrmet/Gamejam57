@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VereliblePikkAnim
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d1b9a14bf22a704ea815d91faa972a3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -76,7 +80,7 @@ PrefabInstance:
       addedObject: {fileID: 1219848066729764915}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d1b9a14bf22a704ea815d91faa972a3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 371383607093701210}
+      addedObject: {fileID: 7326555180532524008}
   m_SourcePrefab: {fileID: 100100000, guid: 6d1b9a14bf22a704ea815d91faa972a3, type: 3}
 --- !u!1 &5808479689808103930 stripped
 GameObject:
@@ -119,8 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   speed: 2
---- !u!136 &371383607093701210
-CapsuleCollider:
+  moveRightFirst: 1
+--- !u!65 &7326555180532524008
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,8 +142,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.68
-  m_Height: 4.36
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -1.28}
+  serializedVersion: 3
+  m_Size: {x: 1.69, y: -0.16, z: 4.05}
+  m_Center: {x: 0.04, y: 0.18, z: -1.39}

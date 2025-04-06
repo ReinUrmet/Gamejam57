@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8334605834047325439, guid: dd86fdd2602d9b646b9aa21ff36bec27, type: 3}
       propertyPath: speed
-      value: 18
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8334605834047325439, guid: dd86fdd2602d9b646b9aa21ff36bec27, type: 3}
       propertyPath: direction.x

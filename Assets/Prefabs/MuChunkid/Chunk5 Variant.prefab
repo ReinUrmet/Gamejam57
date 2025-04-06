@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2174699757157859897, guid: bd8f42ba3d0463d4fbc7d6af1d4f4f02, type: 3}
   firePoint: {fileID: 3752757440925598622}
-  shootInterval: 3
+  shootInterval: 2
   bulletSpeed: 20
 --- !u!1001 &4119427759213016162
 PrefabInstance:
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4339207798715022239, guid: dd86fdd2602d9b646b9aa21ff36bec27, type: 3}
   firePoint: {fileID: 6643320377737186260}
-  shootInterval: 3
+  shootInterval: 2
   bulletSpeed: 20
 --- !u!1001 &8428965380676723926
 PrefabInstance:
@@ -492,6 +492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chunk5 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8860343168524495066, guid: 366d5634bf5bd14499dd628f18b25569, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 4754526498983866220, guid: 6aeb8250acce8d64b93d2c77b002e593, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5922845085468856325, guid: 366d5634bf5bd14499dd628f18b25569, type: 3}
