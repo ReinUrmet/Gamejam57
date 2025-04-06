@@ -12,6 +12,9 @@ public class WavyEnemy : MonoBehaviour
 
     private float waveTimer = 0f;
     private PlayerHealth healthScript;
+	
+	public AudioSource source;
+	public AudioClip clip;
 
     void Start()
     {
@@ -50,7 +53,7 @@ public class WavyEnemy : MonoBehaviour
         transform.forward = direction;
     }
 
-    // 💥 Destroy enemy on bullet hit
+    // 💥 Destroy enemy on bullet hit and play sound
 
     void OnCollisionEnter(Collision collision)
     {
@@ -61,12 +64,13 @@ public class WavyEnemy : MonoBehaviour
             {
                 healthScript.TakeDamage(1);
             }
-
+			
             Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
+			source.PlayOneShot(clip);
             Destroy(gameObject);
         }
     }

@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public string RestartScene = "RestartTseen";
     private bool isDead = false;
+	public AudioSource source;
+	public AudioClip clip;
 
     public void UpdateHearts()
     {
@@ -24,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         Debug.Log("Health -" + damage);
         UpdateHearts();
+		source.PlayOneShot(clip);
 
         if (!isDead && health <= 0)
         {

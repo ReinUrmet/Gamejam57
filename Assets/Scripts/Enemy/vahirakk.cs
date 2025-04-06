@@ -16,6 +16,10 @@ public class WanderingShooter3D_XY : MonoBehaviour
     private float shootTimer = 0f;
 
     private Rigidbody rb;
+	
+	public AudioSource source;
+	public AudioClip clip;
+	public AudioClip clip2;
 
     void Start()
     {
@@ -84,6 +88,9 @@ public class WanderingShooter3D_XY : MonoBehaviour
         Vector3 directionToPlayer = (player.position - firePoint.position).normalized;
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+		
+		// PLay sound
+		source.PlayOneShot(clip2);
 
         // Set bullet direction
         VahiBullet bulletScript = bullet.GetComponent<VahiBullet>();
@@ -108,6 +115,7 @@ public class WanderingShooter3D_XY : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
+			source.PlayOneShot(clip); // Play sound
             Destroy(collision.gameObject); // Destroy the bullet
             Destroy(gameObject);          // Destroy the enemy
         }

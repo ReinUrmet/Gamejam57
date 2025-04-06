@@ -5,6 +5,8 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public Collider playerCollider; // Assign your player's Collider in Inspector
+	public AudioSource source;
+	public AudioClip clip;
 
     [SerializeField] private float shootCooldown = 0.05f;
     private float lastShotTime = -Mathf.Infinity;
@@ -21,6 +23,9 @@ public class PlayerShoot : MonoBehaviour
     void ShootDown()
     {
         if (bulletPrefab == null || firePoint == null) return;
+		
+		// Play sound
+		source.PlayOneShot(clip);
 
         // Spawn slightly below the firePoint to avoid overlapping with the player
         Vector3 spawnPos = firePoint.position + Vector3.down * 0.1f;
