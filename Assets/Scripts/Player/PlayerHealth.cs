@@ -1,10 +1,9 @@
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-
     public GameObject Player;
     public GameObject[] fullHearts;
     public int health;
@@ -12,6 +11,10 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead = false;
 	public AudioSource source;
 	public AudioClip clip;
+
+    [Header("Invulnerability Settings")]
+    public float invulnDuration = 1f;
+    private bool isInvulnerable = false;
 
     public void UpdateHearts()
     {
@@ -23,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isInvulnerable || isDead) return; // ✅ Ignore damage if invulnerable or dead
+
         health -= damage;
         Debug.Log("Health -" + damage);
         UpdateHearts();
@@ -35,7 +40,23 @@ public class PlayerHealth : MonoBehaviour
             Invoke("Restart", 1f);
             Debug.Log("Restart");
         }
+        else
+        {
+            StartCoroutine(StartInvulnerability());
+        }
     }
+
+    System.Collections.IEnumerator StartInvulnerability()
+    {
+        isInvulnerable = true;
+
+        // Optional: add a flashing effect here
+
+        yield return new WaitForSeconds(invulnDuration);
+
+        isInvulnerable = false;
+    }
+
     void Restart()
     {
         SceneManager.LoadScene(RestartScene);
