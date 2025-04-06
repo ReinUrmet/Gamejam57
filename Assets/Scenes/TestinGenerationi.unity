@@ -143,6 +143,7 @@ MonoBehaviour:
   - {fileID: 1436701027}
   health: 3
   RestartScene: RestartTseen
+  invulnDuration: 1
 --- !u!1 &411919080
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,11 +444,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861609921}
   m_CullTransparentMesh: 1
---- !u!4 &870126213 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1874105350041259102, guid: 82412bb2a76af854da0c1cb1afa51509, type: 3}
-  m_PrefabInstance: {fileID: 2604150181075390818}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &881755607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,15 +1656,7 @@ PrefabInstance:
     - target: {fileID: 5592561396368840959, guid: 82412bb2a76af854da0c1cb1afa51509, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592561396368840959, guid: 82412bb2a76af854da0c1cb1afa51509, type: 3}
-      propertyPath: spawnPoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592561396368840959, guid: 82412bb2a76af854da0c1cb1afa51509, type: 3}
-      propertyPath: 'spawnPoints.Array.data[3]'
-      value: 
-      objectReference: {fileID: 870126213}
+      objectReference: {fileID: 4754526498983866220, guid: 6aeb8250acce8d64b93d2c77b002e593, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
