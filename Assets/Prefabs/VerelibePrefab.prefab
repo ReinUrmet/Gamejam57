@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 5
+  speed: 3
   waveAmplitude: 2
   waveFrequency: 2
 --- !u!54 &4141293929039114710

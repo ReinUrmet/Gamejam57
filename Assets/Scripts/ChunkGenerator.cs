@@ -9,6 +9,7 @@ public class ChunkGenerator : MonoBehaviour
     public int renderDistance = 5;          // How many chunks to render ahead
 
     private Dictionary<int, GameObject> spawnedChunks = new Dictionary<int, GameObject>();
+    private GameObject lastSpawnedPrefab = null;
 
     void Start()
     {
@@ -49,16 +50,24 @@ public class ChunkGenerator : MonoBehaviour
     {
         if (spawnedChunks.ContainsKey(index)) return;
 
-        Vector3 spawnPos = new Vector3(0, -index * chunkHeight, 0);
-
-        // 🎲 Choose a random chunk from the list
         if (chunkPrefabs.Count == 0)
         {
             Debug.LogWarning("ChunkGenerator: No chunk prefabs assigned!");
             return;
         }
 
-        GameObject selectedPrefab = chunkPrefabs[Random.Range(0, chunkPrefabs.Count)];
+        Vector3 spawnPos = new Vector3(0, -index * chunkHeight, 0);
+
+        // 🎲 Pick a random chunk that's not the same as the last one
+        GameObject selectedPrefab = null;
+        int attempts = 0;
+        do
+        {
+            selectedPrefab = chunkPrefabs[Random.Range(0, chunkPrefabs.Count)];
+            attempts++;
+        }
+        while (selectedPrefab == lastSpawnedPrefab && chunkPrefabs.Count > 1 && attempts < 10);
+
         GameObject chunk = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
         chunk.name = "Chunk_" + index;
 
@@ -69,5 +78,6 @@ public class ChunkGenerator : MonoBehaviour
         }
 
         spawnedChunks.Add(index, chunk);
+        lastSpawnedPrefab = selectedPrefab; // ✅ Store the last one used
     }
 }

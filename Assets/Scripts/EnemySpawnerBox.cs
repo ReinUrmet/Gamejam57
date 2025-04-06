@@ -24,8 +24,12 @@ public class EnemySpawnerBox : MonoBehaviour
         foreach (Transform point in spawnPoints)
         {
             Vector3 spawnPos = point.position;
-            spawnPos.z = 92.6f; // 🔥 Force Z to -3.6
-            Instantiate(enemyPrefab, spawnPos, point.rotation);
+            spawnPos.z = 62.24f; // 🔥 Force Z position
+
+            // 👇 Rotate 180° on Y-axis from the original rotation
+            Quaternion rotatedY = Quaternion.Euler(point.rotation.eulerAngles + new Vector3(0f, 180f, 0f));
+
+            Instantiate(enemyPrefab, spawnPos, rotatedY);
         }
     }
 
