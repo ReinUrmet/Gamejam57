@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 public class ChunkGenerator : MonoBehaviour
 {
-    public GameObject chunkPrefabA;         // Esimene chunk prefab
-    public GameObject chunkPrefabB;         // Teine chunk prefab
-    public Transform cameraTransform;       // Kaamera, mis liigub alla
-    public int chunkHeight = 100;           // Chunk'i kõrgus ühikutes (sobita prefabi suurusega)
-    public int renderDistance = 5;          // Mitu chunk'i ette ja taha genereeritakse
+    public List<GameObject> chunkPrefabs;   // List of chunk prefabs (set in Inspector)
+    public Transform cameraTransform;       // Camera that moves downward
+    public int chunkHeight = 100;           // Height of each chunk
+    public int renderDistance = 5;          // How many chunks to render ahead
 
     private Dictionary<int, GameObject> spawnedChunks = new Dictionary<int, GameObject>();
 
@@ -52,10 +51,15 @@ public class ChunkGenerator : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(0, -index * chunkHeight, 0);
 
-        // 🎲 Choose a random prefab
-        GameObject prefabToUse = (Random.value < 0.5f) ? chunkPrefabA : chunkPrefabB;
+        // 🎲 Choose a random chunk from the list
+        if (chunkPrefabs.Count == 0)
+        {
+            Debug.LogWarning("ChunkGenerator: No chunk prefabs assigned!");
+            return;
+        }
 
-        GameObject chunk = Instantiate(prefabToUse, spawnPos, Quaternion.identity);
+        GameObject selectedPrefab = chunkPrefabs[Random.Range(0, chunkPrefabs.Count)];
+        GameObject chunk = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
         chunk.name = "Chunk_" + index;
 
         var chunkScript = chunk.GetComponent<Chunk>();
