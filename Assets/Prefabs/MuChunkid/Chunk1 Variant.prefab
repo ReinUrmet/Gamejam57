@@ -659,11 +659,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e819f2df3195a3e4ca3e6b1b7d76dfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4754526498983866220, guid: 6aeb8250acce8d64b93d2c77b002e593, type: 3}
+  enemyPrefab: {fileID: 0}
   spawnPoints:
   - {fileID: 3926337484183152243}
   - {fileID: 6239367900399185555}
   - {fileID: 1654145444560740607}
+  - {fileID: 1874105350041259102}
   spawnOnce: 1
 --- !u!1 &4301005590349765413
 GameObject:
@@ -822,6 +823,7 @@ Transform:
   - {fileID: 3926337484183152243}
   - {fileID: 6239367900399185555}
   - {fileID: 1654145444560740607}
+  - {fileID: 1874105350041259102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5310593163977603787
@@ -1324,6 +1326,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.07
   m_Center: {x: -0.08, y: 0.000000063329935, z: 0}
+--- !u!1 &6445388346485076556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1874105350041259102}
+  m_Layer: 0
+  m_Name: spawnVahk2 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1874105350041259102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6445388346485076556}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21.480011, y: -54.8, z: 71.83}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4381063066706369988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6748509913168140484
 GameObject:
   m_ObjectHideFlags: 0
