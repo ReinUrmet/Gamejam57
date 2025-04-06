@@ -3,6 +3,8 @@ using UnityEngine;
 public class BounceCollision : MonoBehaviour
 {
     public float bounceStrength = 10f;
+	public AudioSource source;
+	public AudioClip clip;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -26,6 +28,9 @@ public class BounceCollision : MonoBehaviour
                     Vector3 bounce = new Vector3(normal.x * bounceStrength, 0f, 0f);
                     rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, rb.linearVelocity.z);
                     rb.AddForce(bounce, ForceMode.VelocityChange);
+					
+					// Play sound
+					source.PlayOneShot(clip);
 
                     // Trigger movement cooldown so bounce isn't canceled
                     PlayerMovement movementScript = GetComponent<PlayerMovement>();
